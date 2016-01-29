@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 </head>
 
-<body>
-
-
+<body ng-controller="TodoController as tc">
+    
+    {{tc.apple}}
 
     <!--JS Components-->
-    <script src="bower_components/jquery/dist/jquery-2.2.0.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <!--Custom Application-->
     <script src="app/app.js"></script>
+    <script src="app/components/todo/todo-controller.js"></script>
 </body>
 
 </html>
