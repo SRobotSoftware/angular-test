@@ -9,14 +9,23 @@
 </head>
 
 <body ng-controller="TodoController as tc">
-    
-    {{tc.apple}}
 
-    <!--JS Components-->
+    <h1>My Sweet Organizr</h1>
+
+    <ul>
+        <li ng-repeat="food in tc.favoriteFoods">I love {{food}}</li>
+    </ul>
+
+    <h1>My Thoughts on Apples: {{tc.apple}}</h1>
+
+    <input type="text" ng-model="tc.apple">
+    <button ng-click="tc.addFood()">Add food to favorites</button>
+
+    <!--Load Libraries-->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
-    <!--Custom Application-->
+    <!--Load Application-->
     <script src="app/app.js"></script>
     <script src="app/components/todo/todo-controller.js"></script>
 </body>
