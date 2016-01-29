@@ -1,8 +1,11 @@
 app.controller('TodoController', function () {
     var vm = this;
-    vm.apple = "I love Apples";
-    vm.favoriteFoods = [];
-    vm.addFood = function () {
-        vm.favoriteFoods.push(vm.apple);
+    vm.list = [];
+    vm.addEvent = function () {
+        vm.list.push(vm.myEvent);
+        vm.myEvent = '';
+    }
+    vm.removeEvent = function(item) {
+        vm.list.splice(item,1);
     }
 });

@@ -9,18 +9,31 @@
 </head>
 
 <body ng-controller="TodoController as tc">
+    <!--Site Container-->
+    <div class="container-fluid">
 
-    <h1>My Sweet Organizr</h1>
-
-    <ul>
-        <li ng-repeat="food in tc.favoriteFoods">I love {{food}}</li>
-    </ul>
-
-    <h1>My Thoughts on Apples: {{tc.apple}}</h1>
-
-    <input type="text" ng-model="tc.apple">
-    <button ng-click="tc.addFood()">Add food to favorites</button>
-
+        <div class="h1">My Sweet Organizr</div>
+        <div class="h3">To Do List: </div>
+        <div class="row">
+            <ul class="list-group col-xs-6">
+                <li class="list-group-item" ng-repeat="currentItem in tc.list track by $index">{{currentItem.task}} - {{currentItem.time | date: 'shortTime'}}<span class="badge" ng-click="tc.removeEvent($index)">X</span></li>
+            </ul>
+        </div>
+        <div class="row">
+            <form class="form" ng-submit="tc.addEvent(tc.myEvent)">
+                <div class="form-group col-xs-2">
+                    <label for=""></label>
+                    <input class="form-control" type="text" placeholder="Task" ng-model="tc.myEvent.task">
+                </div>
+                <div class="form-group col-xs-2">
+                    <label for=""></label>
+                    <input class="form-control" type="time" placeholder="When to do it" ng-model="tc.myEvent.time">
+                </div>
+                <button class="btn btn-default col-xs-2" type="submit">Add to ToDo list</button>
+            </form>
+        </div>
+        <!--Close Site Container-->
+    </div>
     <!--Load Libraries-->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
